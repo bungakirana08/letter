@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TO REYHAN</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- AUDIO BACKGROUND MUSIC -->
+  <audio id="bg-music" src="music.mp3" loop preload="auto"></audio>
+  <button id="btn-mute" class="mute-btn" aria-label="Mute / Unmute musik">🔊</button>
+
+  <!-- ===== SCREEN 1: LOADING ===== -->
+  <div id="screen-loading" class="screen active">
+    <div class="loading-petals">
+      <div class="petal-ring">
+        <span class="petal">🌸</span><span class="petal">🌷</span>
+        <span class="petal">🌸</span><span class="petal">🌼</span>
+        <span class="petal">🌸</span><span class="petal">🌷</span>
+        <span class="petal">🌸</span><span class="petal">🌼</span>
+      </div>
+    </div>
+    <p class="loading-text">Sebentar, bunganya sedang mekar...</p>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <p class="progress-pct" id="progress-pct">0%</p>
+  </div>
+
+  <!-- ===== SCREEN 2: COVER ===== -->
+  <div id="screen-cover" class="screen">
+    <div class="cover-heart">
+      <div class="heart-text-wrap" id="heart-text-wrap"></div>
+      <p class="cover-from">Dari: Bunga Kirana</p>
+      <h1 class="cover-to">Untuk Reyhan Arney Febryant</h1>
+    </div>
+    <p class="tap-hint">KETUK UNTUK MEMBUKA</p>
+  </div>
+
+  <!-- ===== SCREEN 3: PASSWORD ===== -->
+  <div id="screen-password" class="screen">
+    <div class="lock-card">
+      <div class="lock-icon">🔐</div>
+      <p class="lock-question">apa yaa kode nyaa</p>
+      <div class="pin-dots" id="pin-dots">
+        <span class="dot"></span><span class="dot"></span>
+        <span class="dot"></span><span class="dot"></span>
+        <span class="dot"></span><span class="dot"></span>
+      </div>
+      <p class="hint-text" id="hint-text">Petunjuk: ituu tanggal awal kita deket</p>
+      <p class="hint-sub" id="hint-sub"></p>
+      <div class="keypad">
+        <button class="key" data-val="1">1</button>
+        <button class="key" data-val="2">2</button>
+        <button class="key" data-val="3">3</button>
+        <button class="key" data-val="4">4</button>
+        <button class="key" data-val="5">5</button>
+        <button class="key" data-val="6">6</button>
+        <button class="key" data-val="7">7</button>
+        <button class="key" data-val="8">8</button>
+        <button class="key" data-val="9">9</button>
+        <button class="key key-empty"></button>
+        <button class="key" data-val="0">0</button>
+        <button class="key key-del" id="key-del">⌫</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SCREEN 4: MUSEUM TICKET ===== -->
+  <div id="screen-ticket" class="screen">
+    <div class="ticket-page">
+      <p class="ticket-label">PRIVATE EXHIBITION</p>
+      <h2 class="ticket-title">sebuah museum<br>kecil buat reyhan</h2>
+      <p class="ticket-sub">aku simpan beberapa hal kecil tentangmu<br>disini, dibaca pelan² ya reyhan</p>
+
+      <div class="ticket-wrap">
+        <svg class="ticket-svg" viewBox="0 0 340 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="ticketClip">
+              <path d="
+                M20,0
+                Q14,0 14,6
+                Q14,13 8,13 Q2,13 2,19
+                Q2,25 8,25 Q14,25 14,31
+                Q14,37 8,37 Q2,37 2,43
+                Q2,49 8,49 Q14,49 14,55
+                Q14,61 8,61 Q2,61 2,67
+                Q2,73 8,73 Q14,73 14,79
+                Q14,85 8,85 Q2,85 2,91
+                Q2,97 8,97 Q14,97 14,103
+                Q14,109 8,109 Q2,109 2,115
+                Q2,121 8,121 Q14,121 14,127
+                Q14,133 8,133 Q2,133 2,139
+                Q2,145 8,145 Q14,145 14,151
+                Q14,157 20,157
+                L320,157
+                Q326,157 326,151
+                Q326,145 332,145 Q338,145 338,139
+                Q338,133 332,133 Q326,133 326,127
+                Q326,121 332,121 Q338,121 338,115
+                Q338,109 332,109 Q326,109 326,103
+                Q326,97 332,97 Q338,97 338,91
+                Q338,85 332,85 Q326,85 326,79
+                Q326,73 332,73 Q338,73 338,67
+                Q338,61 332,61 Q326,61 326,55
+                Q326,49 332,49 Q338,49 338,43
+                Q338,37 332,37 Q326,37 326,31
+                Q326,25 332,25 Q338,25 338,19
+                Q338,13 332,13 Q326,13 326,6
+                Q326,0 320,0
+                Z
+              "/>
+            </clipPath>
+          </defs>
+
+          <rect x="0" y="0" width="340" height="160" fill="#e8c84a" clip-path="url(#ticketClip)"/>
+          <rect x="22" y="10" width="296" height="140" rx="4" ry="4"
+                fill="none" stroke="rgba(0,0,0,0.55)" stroke-width="1.5"/>
+
+          <line x1="32" y1="48" x2="118" y2="48" stroke="rgba(0,0,0,0.5)" stroke-width="1"/>
+          <line x1="222" y1="48" x2="308" y2="48" stroke="rgba(0,0,0,0.5)" stroke-width="1"/>
+
+          <text x="140" y="52" text-anchor="middle" font-size="10" fill="rgba(0,0,0,0.75)">★</text>
+          <text x="170" y="52" text-anchor="middle" font-size="10" fill="rgba(0,0,0,0.75)">★</text>
+          <text x="200" y="52" text-anchor="middle" font-size="10" fill="rgba(0,0,0,0.75)">★</text>
+
+          <line x1="32" y1="116" x2="118" y2="116" stroke="rgba(0,0,0,0.5)" stroke-width="1"/>
+          <line x1="222" y1="116" x2="308" y2="116" stroke="rgba(0,0,0,0.5)" stroke-width="1"/>
+
+          <text x="140" y="120" text-anchor="middle" font-size="10" fill="rgba(0,0,0,0.75)">★</text>
+          <text x="170" y="120" text-anchor="middle" font-size="10" fill="rgba(0,0,0,0.75)">★</text>
+          <text x="200" y="120" text-anchor="middle" font-size="10" fill="rgba(0,0,0,0.75)">★</text>
+
+          <text x="38" y="80" text-anchor="middle" font-size="7.5" font-family="monospace"
+                fill="rgba(0,0,0,0.6)" letter-spacing="1"
+                transform="rotate(-90, 38, 80)">260626</text>
+
+          <text x="302" y="80" text-anchor="middle" font-size="7.5" font-family="monospace"
+                fill="rgba(0,0,0,0.6)" letter-spacing="1"
+                transform="rotate(90, 302, 80)">260626</text>
+
+          <text x="170" y="67" text-anchor="middle" font-size="7" font-family="'DM Sans',sans-serif"
+                fill="rgba(0,0,0,0.55)" letter-spacing="2">26 JUNI 2026</text>
+
+          <text x="170" y="92" text-anchor="middle" font-size="28"
+                font-family="'Cormorant Garamond',serif" font-weight="500"
+                fill="rgba(0,0,0,0.85)" letter-spacing="3">MUSEUM TICKET</text>
+
+          <text x="170" y="105" text-anchor="middle" font-size="7.5" font-family="'DM Sans',sans-serif"
+                fill="rgba(0,0,0,0.6)" letter-spacing="1.5">PRIVATE EXHIBITION</text>
+
+          <rect x="108" y="130" width="52" height="14" rx="2" ry="2"
+                fill="none" stroke="rgba(0,0,0,0.45)" stroke-width="1"/>
+          <text x="134" y="140" text-anchor="middle" font-size="6.5" font-family="'DM Sans',sans-serif"
+                fill="rgba(0,0,0,0.6)" letter-spacing="1">ADMIT ONE</text>
+
+          <rect x="180" y="130" width="52" height="14" rx="2" ry="2"
+                fill="none" stroke="rgba(0,0,0,0.45)" stroke-width="1"/>
+          <text x="206" y="140" text-anchor="middle" font-size="6.5" font-family="'DM Sans',sans-serif"
+                fill="rgba(0,0,0,0.6)" letter-spacing="1">No. 01</text>
+        </svg>
+      </div>
+
+      <p class="ticket-for">UNTUK — REYHAN ARNEY FEBRYANT</p>
+      <button class="btn-main" id="btn-masuk">MASUK</button>
+    </div>
+  </div>
+
+  <!-- ===== SCREEN 5: MUSEUM ===== -->
+  <div id="screen-museum" class="screen">
+    <div class="museum-page">
+      <p class="museum-intro">sebenernya aku sayang banget ke kamu, aku gatau gimana cara ngelihatin rasa sayangku ini ke kamu, jadi biar museum kecil ini yang pelan² cerita betapa berartinya kamu buat aku</p>
+
+      <div class="polaroid tilt-left">
+        <img class="polaroid-img" src="foto1.jpeg" alt="foto pameran 01">
+        <div class="polaroid-caption"></div>
+      </div>
+
+      <div class="exhibit-label-wrap">
+        <div class="exhibit-label-box">
+          <p class="exhibit-no">PAMERAN 01</p>
+          <h3 class="exhibit-title">awal yang buat aku suka ke kamu</h3>
+          <p class="exhibit-date">10 Juni 2026</p>
+        </div>
+      </div>
+      <p class="exhibit-text">mulai hari itu, ada bagian kecil dari hidupku yang terasa lebih hangat karena ada kamu di dalamnya 🤌</p>
+
+      <div class="divider-dot">●</div>
+
+      <div class="exhibit-card">
+        <p class="exhibit-no">PAMERAN 02</p>
+        <h3 class="exhibit-title-sm">hal yang selalu aku ingat</h3>
+        <p class="exhibit-card-text">caramu memperlakukanku dengan baik, caramu menuruti semua keinginanku, dan selalu memanggilku dengan sebutan "sayangg"</p>
+      </div>
+
+      <div class="polaroid tilt-right">
+        <img class="polaroid-img" src="foto3.jpeg" alt="foto pameran 03">
+        <p class="polaroid-date-tag">23 Juni 2026</p>
+        <div class="polaroid-caption"></div>
+      </div>
+
+      <div class="exhibit-label-wrap">
+        <div class="exhibit-label-box">
+          <p class="exhibit-no">PAMERAN 03</p>
+          <h3 class="exhibit-title">foto terfavoritku</h3>
+        </div>
+      </div>
+      <p class="exhibit-text">inii kita vc pas kamu habis potong, sumpah aku sukak banget, ganteng banget cowonya bunga 🤌</p>
+
+      <div class="divider-dot">●</div>
+
+      <div class="audio-card">
+        <div class="audio-header">
+          <span class="audio-label">AUDIO GUIDE</span>
+          <span class="audio-no">● No. 04</span>
+        </div>
+        <iframe src="https://open.spotify.com/embed/track/7tLcfmzZ21KCzshXMjhUL2"
+          width="100%" height="80" frameborder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy" style="border-radius:12px;"></iframe>
+      </div>
+      <p class="exhibit-no" style="text-align:center;margin-top:1.2rem;">PAMERAN 04</p>
+      <h3 class="exhibit-title" style="text-align:center;font-size:1.6rem;">lagu dari bunga buat reyhan</h3>
+      <p class="exhibit-text" style="text-align:center;">aku pengen kita kaya di lirik lagu itu🥹</p>
+
+      <div class="divider-dot">●</div>
+
+      <p class="last-label">TERAKHIR DECH</p>
+      <h3 class="last-title">dibaca pelan pelan ya sayangg</h3>
+      <button class="btn-main" id="btn-buka-surat">BUKA SURAT</button>
+    </div>
+  </div>
+
+  <!-- ===== SCREEN 6: SURAT ===== -->
+  <div id="screen-surat" class="screen">
+    <div class="surat-page">
+      <div class="surat-card">
+        <p class="surat-date">26 Juni 2026</p>
+        <p class="surat-body">aku mau bilang terimakasih karena kamu sudah mau bertahan dengan segala sifatku, aku minta tolong kamu jangan berpaling ke wanita lain, aku gamau hubungan ini berakhir, aku minta maaf atas keegoisanku dan sifat burukku, intinya aku sayangg bangett ke kamuu🩵</p>
+        <p class="surat-ttd">— Bunga Kirana</p>
+      </div>
+      <p class="penutup-label">PENUTUP</p>
+      <p class="penutup-text">kalau museum ini adalah caraku menunjukkan kalau aku sayang ke kamu, maka bagian selanjutnya adalah cara kecilku memberimu sesuatu</p>
+      <button class="btn-main" id="btn-bouquet">LIHAT BOUQUET</button>
+    </div>
+  </div>
+
+  <!-- ===== SCREEN 7: BOUQUET ===== -->
+  <div id="screen-bouquet" class="screen">
+    <div class="bouquet-page">
+      <div class="bouquet-img-wrap">
+        <img class="bouquet-img" src="bunga.jpeg" alt="bouquet bunga">
+      </div>
+      <div class="bouquet-card">
+        <p class="bouquet-label">FOR YOU</p>
+        <h2 class="bouquet-title">Thank You for Staying<br>untuk Reyhan Arney Febryant</h2>
+        <p class="bouquet-sub">terimakasih banyak karena tetap bertahan sama aku meski sifatku masih belum baik, LOVEEYOUU</p>
+        <div class="bouquet-tags"></div>
+      </div>
+      <button class="btn-main btn-dark" id="btn-back">Back to card</button>
+      <p class="btn-ulang" id="btn-ulang">Ulang dari awal</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
